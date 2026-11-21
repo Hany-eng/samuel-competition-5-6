@@ -93,7 +93,7 @@ footer{text-align:center;font-size:13px;opacity:.7;padding:0 0 24px}
 <header>
   <h1>🕍 رحلة تابوت الرب</h1>
   <p>الأصحاحان الخامس والسادس من سفر صموئيل الأول</p>
-  <div class="name"><label>الاسم: <input id="nm" placeholder="اكتب اسمك"></label><span>التاريخ: <span id="dt"></span></span></div>
+  <div class="name"><label>الاسم: <input id="nm" placeholder="اكتب اسمك"></label></div>
 </header>
 <nav aria-label="أرقام الأسئلة">
   <div class="dots" id="dots"></div>
@@ -138,9 +138,7 @@ const AR=n=>String(n).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
 const Q=[];CH.forEach((c,ci)=>c.q.forEach(q=>{q.n=Q.length+1;q.ch=ci;Q.push(q)}));
 const S=Q.map(()=>({v:null,st:0}));
 $("#tt").textContent=AR(Q.length);
-$("#dt").textContent=new Date().toLocaleDateString("ar-EG");
-
-function card(q){
+ function card(q){
  const i=q.n-1,lab={c:"اختر الإجابة الصحيحة",t:"صح أم خطأ؟",f:"أكمل الإجابة الصحيحة"}[q.k];
  let body="";
  const text=mark(q.t).replace("___",`<span class="bl" id="bl${i}">؟</span>`);
@@ -156,7 +154,7 @@ $("#app").innerHTML=CH.map((c,ci)=>`<section><div class="ch"><span class="ic">${
  <div class="grid">${c.q.map(card).join("")}</div>
  <div class="glos"><h3>📖 الكلمات الصعبة (${c.t})</h3><dl>${c.gl.map(g=>`<div><dt>${g[0]}:</dt> <dd>${g[1]}</dd></div>`).join("")}</dl></div></section>`).join("")+
  `<div class="end"><button class="btn" id="sub">سلّم إجاباتي 🏁</button><div id="res"></div></div>
- <div class="contact"><h3>📞 للتواصل</h3><div><a href="tel:01211970083">أسرة لباس الصليب: 01211970083</a><a href="tel:01274102074">أسرة شهيدات: 01274102074</a></div></div>`;
+ <div class="contact"><h3>📞 للتواصل</h3><div><a href="tel:01211970083">أسرة لباس الصليب</a><a href="tel:01274102074">أسرة شهيدات</a></div></div>`;
 $("#dots").innerHTML=Q.map(q=>`<button class="dot" id="d${q.n-1}" data-i="${q.n-1}" aria-label="سؤال ${q.n}">${AR(q.n)}</button>`).join("");
 
 const CFG={sheet:"https://script.google.com/macros/s/AKfycbzcE-GE9KU-JbK_j08YoTeIWjozDz8PnYDaE0YMNfb-aTx8S2QErZC8jKgOgPMiVwgQpw/exec",wa:"201211970083",quiz:"صموئيل الأول ٥ و٦",max:2,key:"samuel56_attempts"};
@@ -180,7 +178,7 @@ function lock(on){locked=on;document.body.classList.toggle("lock",on);document.q
 function send(p){
  const st=$("#sent");st.textContent="جارٍ إرسال نتيجتك… ⏳";
  return fetch(CFG.sheet,{method:"POST",mode:"no-cors",body:new URLSearchParams(p)})
-  .then(()=>{st.textContent="تم إرسال نتيجتك للمدرّس ✅"})
+  .then(()=>{st.textContent="تم إرسال نتيجتك للخدام ✅"})
   .catch(()=>{st.innerHTML='تعذّر الإرسال، تأكد من الإنترنت <button class="btn hl" id="resend">أعد الإرسال</button>'});
 }
 function submit(){
