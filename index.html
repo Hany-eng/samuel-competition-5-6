@@ -154,7 +154,7 @@ $("#app").innerHTML=CH.map((c,ci)=>`<section><div class="ch"><span class="ic">${
  <div class="grid">${c.q.map(card).join("")}</div>
  <div class="glos"><h3>📖 الكلمات الصعبة (${c.t})</h3><dl>${c.gl.map(g=>`<div><dt>${g[0]}:</dt> <dd>${g[1]}</dd></div>`).join("")}</dl></div></section>`).join("")+
  `<div class="end"><button class="btn" id="sub">سلّم إجاباتي 🏁</button><div id="res"></div></div>
- <div class="contact"><h3>📞 للتواصل</h3><div><a href="tel:01211970083">أسرة لباس الصليب</a><a href="tel:01274102074">أسرة شهيدات</a></div></div>`;
+<div class="contact"><h3>📞 للتواصل</h3><div><a href="https://wa.me/201211970083" target="_blank" rel="noopener">أسرة لباس الصليب</a><a href="https://wa.me/201274102074" target="_blank" rel="noopener">أسرة قديسات</a></div></div>`;
 $("#dots").innerHTML=Q.map(q=>`<button class="dot" id="d${q.n-1}" data-i="${q.n-1}" aria-label="سؤال ${q.n}">${AR(q.n)}</button>`).join("");
 
 const CFG={sheet:"https://script.google.com/macros/s/AKfycbzcE-GE9KU-JbK_j08YoTeIWjozDz8PnYDaE0YMNfb-aTx8S2QErZC8jKgOgPMiVwgQpw/exec",wa:"201211970083",quiz:"صموئيل الأول ٥ و٦",max:2,key:"samuel56_attempts"};
