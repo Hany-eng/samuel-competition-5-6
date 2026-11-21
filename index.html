@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta property="og:title" content="مسابقة صموئيل الأول ٥ و٦ — رحلة تابوت الرب">
+<meta property="og:description" content="حل الأسئلة وسلّم إجاباتك لتعرف نتيجتك — أسرة لباس الصليب">
+<meta name="theme-color" content="#2b2f77">
+<title>أسئلة صموئيل الأول ٥ و٦ — تابوت الرب</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+:root{--sand:#f7ebc8;--paper:#fffaf0;--nile:#0e7490;--indigo:#2b2f77;--gold:#f0a30a;--coral:#e8553d;--green:#2e9d5b;--ink:#2a2540}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Cairo','Segoe UI',Tahoma,sans-serif;color:var(--ink);line-height:1.8;
+ background:var(--sand) radial-gradient(circle at 1px 1px,rgba(160,110,20,.13) 1.5px,transparent 0) 0 0/22px 22px}
+h1,h2,.lz{font-family:'Lalezar','Cairo',sans-serif;font-weight:400}
+header{text-align:center;padding:28px 16px 8px}
+header h1{margin:0;font-size:clamp(28px,6vw,46px);color:var(--indigo)}
+header p{margin:4px 0 0;font-size:17px}
+.name{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:12px 0 0;font-weight:600}
+.name input{border:0;border-bottom:2px dashed var(--indigo);background:transparent;font:inherit;width:170px;text-align:center}
+nav{position:sticky;top:0;z-index:20;background:var(--indigo);padding:8px 10px 10px;box-shadow:0 4px 0 rgba(0,0,0,.12)}
+.dots{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.dot{width:34px;height:34px;border-radius:50%;border:2px solid #fff6;background:#ffffff1f;color:#fff;font:700 15px Cairo,sans-serif;cursor:pointer}
+.dot.ans{background:var(--gold);border-color:var(--gold);color:var(--indigo)}
+.dot.ok{background:var(--green);border-color:var(--green);color:#fff}
+.dot.bad{background:var(--coral);border-color:var(--coral);color:#fff}
+.bar{height:10px;border-radius:9px;background:#ffffff2e;margin:8px auto 0;max-width:560px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--gold),#ffd45e);transition:width .4s}
+.stat{color:#fff;text-align:center;font-size:14px;margin-top:2px}
+main{max-width:1050px;margin:0 auto;padding:0 14px 40px}
+.ch{margin:30px 0 16px;background:var(--indigo);color:#fff;border-radius:22px 22px 22px 6px;padding:14px 22px;display:flex;align-items:center;gap:14px;border-bottom:6px solid var(--gold)}
+.ch .ic{font-size:44px;line-height:1}
+.ch h2{margin:0;font-size:32px;color:var(--gold)}
+.ch p{margin:0;opacity:.9}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:16px}
+.card{background:var(--paper);border-radius:20px;padding:16px 18px 18px;border:3px solid #e8d9a8;border-bottom:7px solid var(--c);position:relative;scroll-margin-top:130px;transition:transform .2s,box-shadow .2s}
+.card.c{--c:var(--gold)}.card.t{--c:var(--coral)}.card.f{--c:var(--nile)}
+.card.flash{box-shadow:0 0 0 5px var(--c)}
+.card.ok{background:#eefaf1;border-color:var(--green)}
+.card.bad{background:#fff1ee;border-color:var(--coral)}
+.badge{display:inline-flex;gap:8px;align-items:center;font-weight:800;font-size:14px;color:#fff;background:var(--c);padding:2px 14px 2px 12px;border-radius:30px}
+.badge b{background:#fff;color:var(--ink);border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-size:14px}
+.ref{float:left;font-size:13px;background:#fff;border:2px dashed #cdb97a;border-radius:10px;padding:0 9px}
+.q{font-size:19px;font-weight:600;margin:10px 0 12px}
+.bl{display:inline-block;min-width:76px;text-align:center;border-bottom:3px dashed var(--c);color:var(--nile);font-weight:800;padding:0 6px}
+.w{font:inherit;font-weight:800;color:var(--indigo);background:#ffe9a8;border:0;border-radius:8px;padding:0 6px;cursor:help;box-shadow:0 2px 0 #d9a91d}
+.opts{display:flex;flex-wrap:wrap;gap:9px}
+.opt{font:700 17px Cairo,sans-serif;background:#fff;border:3px solid var(--gold);color:var(--ink);border-radius:30px;padding:4px 20px;cursor:pointer}
+.opt.sel{background:var(--gold);box-shadow:0 3px 0 #b47a00}
+.tfs{display:flex;gap:14px}
+.tf{font:800 26px Cairo,sans-serif;width:68px;height:56px;border-radius:18px;border:3px solid;cursor:pointer;background:#fff}
+.tf.y{border-color:var(--green);color:var(--green)}.tf.n{border-color:var(--coral);color:var(--coral)}
+.tf.y.sel{background:var(--green);color:#fff}.tf.n.sel{background:var(--coral);color:#fff}
+.fi{width:100%;font:700 18px Cairo,sans-serif;border:3px solid var(--nile);border-radius:14px;padding:6px 14px;background:#fff;color:var(--ink)}
+.row{display:flex;gap:8px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.btn{font:800 16px Cairo,sans-serif;border:0;border-radius:30px;padding:5px 20px;cursor:pointer;color:#fff;background:var(--nile);box-shadow:0 4px 0 #095266}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 #095266}
+.btn.hl{background:#fff;color:var(--indigo);border:2px solid var(--indigo);box-shadow:none;padding:2px 14px}
+.fb{margin-top:10px;font-weight:700;min-height:1px}
+.fb.g{color:var(--green)}.fb.r{color:var(--coral)}.fb small{display:block;color:var(--ink);font-weight:400}
+.hint{display:none;margin-top:8px;background:#e6f5f9;border-radius:12px;padding:2px 12px;font-size:15px}
+.hint.on{display:block}
+.glos{margin-top:16px;background:var(--paper);border:3px dashed var(--indigo);border-radius:20px;padding:12px 20px}
+.glos h3{margin:0 0 6px;font-family:'Lalezar',Cairo;font-weight:400;font-size:24px;color:var(--indigo)}
+.glos dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:4px 22px;margin:0}
+.glos div{padding:3px 0;border-bottom:1px dotted #cdb97a}
+.glos dt{display:inline;font-weight:800;color:var(--nile)}
+.glos dd{display:inline;margin:0}
+.end{text-align:center;margin-top:30px}
+.end .btn{font-size:20px;padding:8px 28px;margin:4px}
+.btn.rs{background:var(--coral);box-shadow:0 4px 0 #a73a27}
+#res{display:none;margin:20px auto 0;max-width:520px;background:var(--paper);border:4px solid var(--gold);border-radius:26px;padding:14px 20px}
+#res.on{display:block}
+#res .st{font-size:46px;letter-spacing:6px}
+#res .btn{margin:4px}
+.btn.wa{background:#1f9d55;box-shadow:0 4px 0 #136a39}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.sent{font-size:15px;font-weight:600;margin:6px 0}
+.contact{margin:34px auto 0;max-width:620px;background:var(--indigo);color:#fff;border-radius:22px;padding:12px 18px;border-bottom:6px solid var(--gold)}
+.contact h3{margin:0 0 6px;font-family:'Lalezar',Cairo;font-weight:400;color:var(--gold);font-size:24px}
+.contact div{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.contact a{color:var(--indigo);background:var(--gold);border-radius:30px;padding:2px 18px;text-decoration:none;font-weight:800}
+.lock .opt,.lock .tf,.lock .fi{pointer-events:none;opacity:.75}
+#tip{position:fixed;z-index:50;max-width:260px;background:var(--indigo);color:#fff;padding:8px 14px;border-radius:14px;font-size:15px;line-height:1.6;display:none;box-shadow:0 6px 18px #0004}
+footer{text-align:center;font-size:13px;opacity:.7;padding:0 0 24px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
+</style>
+</head>
+<body>
+<header>
+  <h1>🕍 رحلة تابوت الرب</h1>
+  <p>الأصحاحان الخامس والسادس من سفر صموئيل الأول</p>
+  <div class="name"><label>الاسم: <input id="nm" placeholder="اكتب اسمك"></label><span>التاريخ: <span id="dt"></span></span></div>
+</header>
+<nav aria-label="أرقام الأسئلة">
+  <div class="dots" id="dots"></div>
+  <div class="bar"><i id="pb"></i></div>
+  <div class="stat">أجبتَ عن <b id="sa">0</b> من <span id="tt"></span> سؤال</div>
+</nav>
+<main id="app"></main>
+<div id="tip" role="tooltip"></div>
+<footer>اضغط على الكلمة الملوّنة بالأصفر لتعرف معناها • يمكنك حل الأسئلة بأي ترتيب • النتيجة تظهر بعد التسليم</footer>
+
+<script>
+/* ========= بيانات الأسئلة (عدّلها من هنا) ========= */
+const CH=[
+{t:"الأصحاح الخامس",s:"داجون أمام تابوت الرب",ic:"🗿",
+ gl:[["داجون","إله الفلسطينيين، وكان له تمثال."],["العتبة","الحد الأسفل لباب البيت."],["أقطاب","حكام ورؤساء المدن."],["أشدود","مدينة فلسطينية."],["جت وعقرون","مدينتان فلسطينيتان."]],
+ q:[
+ {k:"c",t:"وضع الفلسطينيون تابوت الرب في بيت الإله ___",o:["داجون","بعل","عشتاروت"],a:0,r:"ع ٢",e:"أدخلوا التابوت بيت داجون وأقاموه بجانبه."},
+ {k:"c",t:"بعد أن ضرب الرب أشدود، نُقل التابوت أولًا إلى مدينة ___",o:["جت","عقرون","غزة"],a:0,r:"ع ٨",e:"نُقل إلى جت، ثم بعدها إلى عقرون."},
+ {k:"t",t:"وجد أهل أشدود في الصباح داجون ساقطًا على وجهه أمام تابوت الرب.",a:true,r:"ع ٣",e:"سقط داجون على وجهه أمام التابوت، فأقاموه مكانه."},
+ {k:"t",t:"أصاب الرب أهل أشدود بالبرص.",a:false,r:"ع ٦",e:"لم يصبهم بالبرص، بل ضربهم بالبواسير."},
+ {k:"f",t:"وُجد رأس داجون وكفا يديه مقطوعة على ___",a:["عتبه"],s:"العتبة",r:"ع ٤",h:"الحد الأسفل لباب البيت."},
+ {k:"f",t:"اجتمع كل ___ الفلسطينيين وقرروا إرسال تابوت الرب إلى مكانه.",a:["قطاب"],s:"أقطاب",r:"ع ١١",h:"هم حكام ورؤساء المدن."}
+ ]},
+{t:"الأصحاح السادس",s:"التابوت يعود إلى بيت شمس",ic:"🐄",
+ gl:[["العرّافون","من يدّعون معرفة الغيب والأمور الخفية."],["قربان إثم","تقدمة تُقدَّم اعتذارًا عن الخطأ."],["بواسير","أورام ودمامل مؤلمة أصابت الفلسطينيين."],["فئران","جمع فأر."],["العجلة","عربة بعجلات تجرّها الحيوانات."],["مرضعتان","بقرتان لهما عجلان صغيران يرضعانهما."],["اللاويون","خدام بيت الله من سبط لاوي."],["البيتشمسي","من أهل بيت شمس."]],
+ q:[
+ {k:"c",t:"كان تابوت الرب في بلاد الفلسطينيين ___ أشهر",o:["ثلاثة","أربعة","سبعة"],a:2,r:"ع ١",e:"بقي التابوت سبعة أشهر في بلاد الفلسطينيين."},
+ {k:"c",t:"دعا الفلسطينيون ___ ليعرفوا ماذا يعملون بتابوت الرب.",o:["علماء الفلك","الكهنة والعرافين","السحرة"],a:1,r:"ع ٢",e:"سألوا الكهنة والعرّافين."},
+ {k:"t",t:"قربان الإثم الذي يقدمونه يكون خمسة بواسير من ذهب وخمسة فئران من ذهب.",a:true,r:"ع ٤",e:"خمسة من كل نوع، على عدد أقطاب الفلسطينيين."},
+ {k:"t",t:"أخذ الفلسطينيون أتانتين مرضعتين وربطوهما إلى العجلة ووضعوا عليها تابوت الرب والذهب.",a:false,r:"ع ٧",e:"لم تكونا أتانتين، بل بقرتين مرضعتين لم يعلُ عليهما نير."},
+ {k:"f",t:"جاءت العجلة إلى حقل ___",a:["يشوع"],s:"يشوع البيتشمسي",r:"ع ١٤",h:"اسم رجل من أهل بيت شمس."},
+ {k:"f",t:"فأنزل ___ تابوت الرب والصندوق الذي معه.",a:["لاوي"],s:"اللاويون",r:"ع ١٥",h:"هم خدام بيت الله من سبط لاوي."}
+ ]}];
+const FORMS={"داجون":"إله الفلسطينيين، وكان له تمثال.","العتبة":"الحد الأسفل لباب البيت.","أقطاب":"حكام ورؤساء المدن.","أشدود":"مدينة فلسطينية.","العرافين":"من يدّعون معرفة الغيب والأمور الخفية.","قربان الإثم":"تقدمة تُقدَّم اعتذارًا عن الخطأ.","بواسير":"أورام ودمامل مؤلمة أصابت الفلسطينيين.","فئران":"جمع فأر.","العجلة":"عربة بعجلات تجرّها الحيوانات.","مرضعتين":"بقرتان لهما عجلان صغيران يرضعانهما.","البيتشمسي":"من أهل بيت شمس.","العرّافون":"من يدّعون معرفة الغيب والأمور الخفية."};
+
+/* ========= الكود ========= */
+const $=s=>document.querySelector(s);
+const norm=s=>(s||"").replace(/[\u064B-\u065F\u0670\u0640]/g,"").replace(/[أإآ]/g,"ا").replace(/ة/g,"ه").replace(/ى/g,"ي").replace(/\s+/g," ").trim();
+const RX=new RegExp(Object.keys(FORMS).sort((a,b)=>b.length-a.length).join("|"),"g");
+const mark=t=>t.replace(RX,m=>`<button class="w" data-d="${FORMS[m]}">${m}</button>`);
+const AR=n=>String(n).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]);
+const Q=[];CH.forEach((c,ci)=>c.q.forEach(q=>{q.n=Q.length+1;q.ch=ci;Q.push(q)}));
+const S=Q.map(()=>({v:null,st:0}));
+$("#tt").textContent=AR(Q.length);
+$("#dt").textContent=new Date().toLocaleDateString("ar-EG");
+
+function card(q){
+ const i=q.n-1,lab={c:"اختر الإجابة الصحيحة",t:"صح أم خطأ؟",f:"أكمل الإجابة الصحيحة"}[q.k];
+ let body="";
+ const text=mark(q.t).replace("___",`<span class="bl" id="bl${i}">؟</span>`);
+ if(q.k=="c")body=`<div class="opts">${q.o.map((o,j)=>`<button class="opt" data-i="${i}" data-j="${j}">${o}</button>`).join("")}</div>`;
+ if(q.k=="t")body=`<div class="tfs"><button class="tf y" data-i="${i}" data-j="1" aria-label="صح">✓</button><button class="tf n" data-i="${i}" data-j="0" aria-label="خطأ">✗</button></div>`;
+ if(q.k=="f")body=`<input class="fi" id="fi${i}" data-i="${i}" placeholder="اكتب إجابتك هنا" autocomplete="off">`;
+ return `<article class="card ${q.k}" id="q${i}"><span class="badge"><b>${AR(q.n)}</b>${lab}</span><span class="ref">📖 ${q.r}</span>
+ <p class="q">${text}</p>${body}
+ <div class="row">${q.h?`<button class="btn hl hnt" data-i="${i}">💡 تلميح</button>`:""}</div>
+ ${q.h?`<div class="hint" id="h${i}">${q.h}</div>`:""}</article>`;
+}
+$("#app").innerHTML=CH.map((c,ci)=>`<section><div class="ch"><span class="ic">${c.ic}</span><div><h2>${c.t}</h2><p>${c.s}</p></div></div>
+ <div class="grid">${c.q.map(card).join("")}</div>
+ <div class="glos"><h3>📖 الكلمات الصعبة (${c.t})</h3><dl>${c.gl.map(g=>`<div><dt>${g[0]}:</dt> <dd>${g[1]}</dd></div>`).join("")}</dl></div></section>`).join("")+
+ `<div class="end"><button class="btn" id="sub">سلّم إجاباتي 🏁</button><div id="res"></div></div>
+ <div class="contact"><h3>📞 للتواصل</h3><div><a href="tel:01211970083">أسرة لباس الصليب: 01211970083</a><a href="tel:01274102074">أسرة شهيدات: 01274102074</a></div></div>`;
+$("#dots").innerHTML=Q.map(q=>`<button class="dot" id="d${q.n-1}" data-i="${q.n-1}" aria-label="سؤال ${q.n}">${AR(q.n)}</button>`).join("");
+
+const CFG={sheet:"https://script.google.com/macros/s/AKfycbzcE-GE9KU-JbK_j08YoTeIWjozDz8PnYDaE0YMNfb-aTx8S2QErZC8jKgOgPMiVwgQpw/exec",wa:"201211970083",quiz:"صموئيل الأول ٥ و٦",max:2,key:"samuel56_attempts"};
+const has=s=>s.v!==null&&s.v!=="";
+const getAtt=()=>{try{return +localStorage.getItem(CFG.key)||0}catch(e){return 0}};
+const setAtt=n=>{try{localStorage.setItem(CFG.key,n)}catch(e){}};
+function isOk(q,v){
+ if(q.k=="c")return v===q.a;
+ if(q.k=="t")return v===(q.a?1:0);
+ const x=norm(v);return q.a.some(a=>x.includes(a));
+}
+function ansStr(q,v){return !has({v})?"—":q.k=="c"?q.o[v]:q.k=="t"?(v?"صح":"خطأ"):v}
+function blank(i,txt){const b=$("#bl"+i);if(b)b.textContent=txt||"؟"}
+function stats(){
+ const a=S.filter(has).length;
+ $("#sa").textContent=AR(a);$("#pb").style.width=(a/Q.length*100)+"%";
+ S.forEach((s,i)=>{$("#d"+i).className="dot"+(has(s)?" ans":"")});
+}
+let sentPayload=null,locked=false;
+function lock(on){locked=on;document.body.classList.toggle("lock",on);document.querySelectorAll(".fi").forEach(f=>f.disabled=on);$("#sub").disabled=on||getAtt()>=CFG.max}
+function send(p){
+ const st=$("#sent");st.textContent="جارٍ إرسال نتيجتك… ⏳";
+ return fetch(CFG.sheet,{method:"POST",mode:"no-cors",body:new URLSearchParams(p)})
+  .then(()=>{st.textContent="تم إرسال نتيجتك للمدرّس ✅"})
+  .catch(()=>{st.innerHTML='تعذّر الإرسال، تأكد من الإنترنت <button class="btn hl" id="resend">أعد الإرسال</button>'});
+}
+function submit(){
+ const nm=$("#nm").value.trim(),res=$("#res");
+ if(getAtt()>=CFG.max){return}
+ if(!nm){res.className="on";res.innerHTML="<p>✏️ اكتب اسمك أولًا في أعلى الصفحة، ثم سلّم إجاباتك.</p>";scrollTo({top:0,behavior:"smooth"});$("#nm").focus();return}
+ const miss=S.filter(s=>!has(s)).length;
+ if(miss&&!confirm(`لم تُجب عن ${AR(miss)} سؤال. هل تريد التسليم؟`))return;
+ const o=Q.filter((q,k)=>has(S[k])&&isOk(q,S[k].v)).length,att=getAtt()+1;setAtt(att);
+ sentPayload={name:nm,quiz:CFG.quiz,score:o,total:Q.length,attempt:att,answers:Q.map((q,k)=>(k+1)+":"+ansStr(q,S[k].v)).join(" | "),time:new Date().toLocaleString("ar-EG")};
+ const p=o/Q.length,n=p>=.9?3:p>=.6?2:p>0?1:0;
+ const msg=p==1?"ممتاز! أنت بطل التابوت 🏆":p>=.6?"جميل جدًا! 👏":"شجّع نفسك! اقرأ الأصحاحين مرة أخرى 📖";
+ const wa=`https://wa.me/${CFG.wa}?text=`+encodeURIComponent(`${nm} — ${CFG.quiz}\nالنتيجة: ${o} من ${Q.length} (المحاولة ${att})`);
+ res.className="on";
+ res.innerHTML=`<div class="st">${"⭐".repeat(n)||"🌱"}</div><h2 class="lz" style="margin:0;font-size:30px">${nm}، نتيجتك ${AR(o)} من ${AR(Q.length)}</h2><p>${msg}</p><div class="sent" id="sent"></div>
+ <a class="btn wa" href="${wa}" target="_blank" rel="noopener" style="text-decoration:none;display:inline-block">أرسل النتيجة واتساب 💬</a>
+ ${att<CFG.max?'<button class="btn rs" id="again">محاولة ثانية 🔄</button><p style="font-size:14px">باقي لك محاولة واحدة.</p>':'<p style="font-size:14px">استخدمت محاولتيك. بالتوفيق! 🌟</p>'}`;
+ lock(true);res.scrollIntoView({behavior:"smooth",block:"center"});send(sentPayload);
+}
+function again(){
+ S.forEach(s=>s.v=null);Q.forEach((q,k)=>{blank(k);const f=$("#fi"+k);if(f)f.value="";document.querySelectorAll(`[data-i="${k}"].sel`).forEach(b=>b.classList.remove("sel"));const h=$("#h"+k);if(h)h.classList.remove("on")});
+ $("#res").className="";lock(false);stats();scrollTo({top:0,behavior:"smooth"});
+}
+document.addEventListener("click",e=>{
+ const t=e.target.closest("button");const tip=$("#tip");
+ if(!t||!t.classList.contains("w"))tip.style.display="none";
+ if(!t)return;
+ const i=+t.dataset.i;
+ if(t.classList.contains("opt")){S[i].v=+t.dataset.j;document.querySelectorAll(`.opt[data-i="${i}"]`).forEach(b=>b.classList.toggle("sel",b===t));blank(i,t.textContent);stats()}
+ else if(t.classList.contains("tf")){S[i].v=+t.dataset.j;document.querySelectorAll(`.tf[data-i="${i}"]`).forEach(b=>b.classList.toggle("sel",b===t));stats()}
+ else if(t.classList.contains("hnt"))$("#h"+i).classList.toggle("on");
+ else if(t.classList.contains("dot")){const c=$("#q"+i);c.scrollIntoView({behavior:"smooth",block:"center"});c.classList.add("flash");setTimeout(()=>c.classList.remove("flash"),900);const f=c.querySelector(".fi");if(f)setTimeout(()=>f.focus({preventScroll:true}),500)}
+ else if(t.classList.contains("w")){e.stopPropagation();tip.textContent=t.dataset.d;tip.style.display="block";const r=t.getBoundingClientRect();
+  tip.style.top=Math.min(r.bottom+8,innerHeight-tip.offsetHeight-8)+"px";tip.style.left=Math.max(8,Math.min(r.left,innerWidth-tip.offsetWidth-8))+"px"}
+ else if(t.id=="sub")submit();
+ else if(t.id=="again")again();
+ else if(t.id=="resend"&&sentPayload)send(sentPayload);
+});
+document.addEventListener("input",e=>{if(e.target.classList.contains("fi")){const i=+e.target.dataset.i;S[i].v=e.target.value;blank(i,e.target.value);stats()}});
+document.addEventListener("keydown",e=>{if(e.key=="Escape")$("#tip").style.display="none"});
+stats();
+if(getAtt()>=CFG.max){$("#res").className="on";$("#res").innerHTML="<p>استخدمتَ محاولتيك في هذا الاختبار. بالتوفيق! 🌟</p>";lock(true)}
+</script>
+</body>
+</html>
